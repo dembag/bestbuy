@@ -52,7 +52,9 @@ def total_items_in_store(best_buy):
 
 
 def make_order(best_buy):
-    """ Prompts user to select items and quantities to buy."""
+    """ Prompts user to select items and quantities to buy.
+        Displays the payment due.
+    """
     inventory_list = list_all_products(best_buy)
     shopping_list = []
     print("When the order is complete, enter 0.")
