@@ -6,18 +6,22 @@ class Store:
         self.inventory = inventory
 
     def add_product(self, product):
+        """ Adds a product to the inventory."""
         self.inventory.append(product)
 
     def remove_product(self, product):
+        """ Removes product from the inventory."""
         self.inventory.remove(product)
 
     def get_total_quantity(self):
+        """ Gets the total number of items in the inventory."""
         total_quantity = 0
         for product in self.inventory:
             total_quantity += product.quantity
         return total_quantity
 
     def get_all_products(self):
+        """ Returns a list of all the ACTIVE products."""
         products = []
         for product in self.inventory:
             if product.active == True:
@@ -25,6 +29,9 @@ class Store:
         return products
 
     def order(self, shopping_list):
+        """ Takes a list of tuples.
+            Returns the total cost of an order.
+        """
         total_cost = 0.0
         for item, quantity in shopping_list:
             total_cost = total_cost + (item.price * quantity)
