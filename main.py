@@ -82,6 +82,7 @@ def make_order(best_buy):
                 if quantity > item.get_quantity():
                     print("Not enough in stock. There are only "
                           f"{item.get_quantity()} available.")
+                    continue
                 break
             except ValueError:
                 print("Please enter a valid number.")

@@ -46,9 +46,7 @@ class Product:
         else:
             total_price = self.price * quantity
             remaining_quantity = self.quantity - quantity
-
             self.set_quantity(remaining_quantity)
-
             return float(total_price)
 
 

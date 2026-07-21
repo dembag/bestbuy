@@ -34,7 +34,7 @@ class Store:
         """
         total_cost = 0.0
         for item, quantity in shopping_list:
-            total_cost = total_cost + (item.price * quantity)
+            total_cost = item.buy(quantity)
         return total_cost
 
 
