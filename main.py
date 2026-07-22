@@ -4,12 +4,8 @@ import products
 import store
 
 
-def start(best_buy):
-    """
-    Displays the main menu
-    :param best_buy: Store object
-    :return:
-    """
+def start():
+    """ Displays the main menu."""
 
     print("\n-------------------")
     print("Menu")
@@ -98,7 +94,8 @@ def make_order(best_buy):
             print(f"Order made! Total payment due: ${total_cost:.2f}")
             break
 
-def quit_app(best_buy):
+def quit_app():
+    """ Quits the application."""
     print("\n-------------------")
     print("Thanks for using BestBuy. Goodbye!")
     sys.exit()
@@ -121,15 +118,15 @@ action_dictionary = {
 
 
 def main():
+    """ Controls the application flow."""
     print("Welcome to BestBuy!")
     while True:
-        start(best_buy)
+        start()
         action = get_action()
-        action_dictionary[action](best_buy)
-
-
-
-
+        if action == 4:
+            action_dictionary[action]()
+        else:
+            action_dictionary[action](best_buy)
 
 
 if __name__ == '__main__':
