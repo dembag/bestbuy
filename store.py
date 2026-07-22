@@ -1,6 +1,6 @@
-from products import Product
 
 class Store:
+    """ Defines the Store class."""
     def __init__(self, inventory):
         """ Constructs a Store object."""
         for item in inventory:

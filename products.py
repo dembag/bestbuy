@@ -1,4 +1,5 @@
 class Product:
+    """ Defines the Product class."""
     def __init__(self, name, price, quantity):
         """ Constructs Product object."""
         self.name = name
@@ -42,8 +43,8 @@ class Product:
         try:
             if self.quantity < quantity:
                 raise ValueError("Not enough product to fulfill order!")
-        except ValueError as ve:
-            return ve
+        except ValueError as v_e:
+            return v_e
         else:
             total_price = self.price * quantity
             remaining_quantity = self.quantity - quantity
