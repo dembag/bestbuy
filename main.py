@@ -55,8 +55,11 @@ def make_order(best_buy):
     """ Prompts user to select items and quantities to buy.
         Displays the payment due.
     """
-    inventory_list = list_all_products(best_buy)
+    inventory_list = best_buy.get_all_products()
     shopping_list = []
+    item = ""
+    quantity = 0
+
     print("When the order is complete, enter 0.")
     # Select product
     while True:
@@ -75,10 +78,10 @@ def make_order(best_buy):
 
         # Enter amount
         while True:
+            if item_num == 0:
+                break
             try:
                 quantity = int(input("How many would you like: "))
-                if quantity == 0:
-                    break
                 if quantity > item.get_quantity():
                     print("Not enough in stock. There are only "
                           f"{item.get_quantity()} available.")
@@ -86,7 +89,7 @@ def make_order(best_buy):
                 break
             except ValueError:
                 print("Please enter a valid number.")
-        if quantity > 0:
+        if item_num > 0:
             shopping_list.append((item, quantity))
             print("Item added to list!")
         else:
